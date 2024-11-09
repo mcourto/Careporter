@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care Statement Solution</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #00843D 0%, #006B31 100%);
+        }
+        
+        /* Mobile-first menu */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* Responsive card grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        
+        /* Touch-friendly buttons */
+        .touch-button {
+            min-height: 44px;
+            padding: 0.75rem 1rem;
+        }
+        
+        /* Improved readability on mobile */
+        @media (max-width: 768px) {
+            .mobile-text {
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+            
+            .mobile-heading {
+                font-size: 1.75rem;
+                line-height: 1.3;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Mobile Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="/api/placeholder/40/40" alt="Logo" class="h-8 w-8"/>
+                    <span class="ml-2 text-xl font-bold text-gray-800">CareReports</span>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="touch-button">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#features" class="touch-button text-gray-600 hover:text-gray-900">Features</a>
+                    <a href="#demo" class="touch-button text-gray-600 hover:text-gray-900">Demo</a>
+                    <a href="#docs" class="touch-button text-gray-600 hover:text-gray-900">Docs</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Sidebar -->
+    <div id="mobile-menu" class="mobile-menu fixed top-0 left-0 w-64 h-full bg-white shadow-lg z-50 md:hidden">
+        <div class="p-4">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-bold">Menu</span>
+                <button id="close-menu" class="touch-button">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <a href="#features" class="block touch-button text-gray-600 hover:text-gray-900">Features</a>
+                <a href="#demo" class="block touch-button text-gray-600 hover:text-gray-900">Demo</a>
+                <a href="#docs" class="block touch-button text-gray-600 hover:text-gray-900">Documentation</a>
+                <a href="#contact" class="block touch-button text-gray-600 hover:text-gray-900">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section class="gradient-bg text-white py-12 px-4">
+            <div class="max-w-7xl mx-auto">
+                <h1 class="mobile-heading text-4xl md:text-5xl font-bold mb-4">
+                    Care Statement Solution
+                </h1>
+                <p class="mobile-text text-xl mb-8">
+                    Automated aged care reporting for Australian providers
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#demo" class="touch-button bg-white text-green-700 text-center rounded-lg font-semibold hover:bg-green-50">
+                        Try Demo
+                    </a>
+                    <a href="#docs" class="touch-button border-2 border-white text-center rounded-lg font-semibold hover:bg-white hover:text-green-700">
+                        View Docs
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentation Links -->
+        <section class="py-12 px-4">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="mobile-heading text-3xl font-bold mb-8">Complete Documentation</h2>
+                <div class="card-grid">
+                    <!-- Technical Overview -->
+                    <a href="/docs/technical-overview.html" class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-semibold mb-4">Technical Overview</h3>
+                        <p class="text-gray-600 mb-4">
+                            System architecture, components, and specifications
+                        </p>
+                        <span class="text-green-600 flex items-center">
+                            Learn More →
+                        </span>
+                    </a>
+
+                    <!-- API Documentation -->
+                    <a href="/docs/api-reference.html" class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-semibold mb-4">API Reference</h3>
+                        <p class="text-gray-600 mb-4">
+                            Complete API documentation and integration guides
+                        </p>
+                        <span class="text-green-600 flex items-center">
+                            View API Docs →
+                        </span>
+                    </a>
+
+                    <!-- Feature Guide -->
+                    <a href="/docs/feature-guide.html" class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-semibold mb-4">Feature Guide</h3>
+                        <p class="text-gray-600 mb-4">
+                            Detailed explanation of all system features
+                        </p>
+                        <span class="text-green-600 flex items-center">
+                            Explore Features →
+                        </span>
+                    </a>
+
+                    <!-- Implementation Guide -->
+                    <a href="/docs/implementation.html" class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                        <h3 class="text-xl font-semibold mb-4">Implementation</h3>
+                        <p class="text-gray-600 mb-4">
+                            Step-by-step implementation process
+                        </p>
+                        <span class="text-green-600 flex items-center">
+                            View Guide →
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Demo -->
+        <section id="demo" class="py-12 px-4 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="mobile-heading text-3xl font-bold mb-8">Interactive Demo</h2>
+                <div class="bg-gray-50 rounded-lg p-4 md:p-8">
+                    <!-- Demo Component Mount Point -->
+                    <div id="demo-component"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile-friendly Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <div class="space-y-2">
+                        <p class="touch-button">1300 XXX XXX</p>
+                        <p class="touch-button">support@carereports.com.au</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Documentation</h3>
+                    <div class="space-y-2">
+                        <a href="/docs/technical-overview.html" class="block touch-button hover:text-green-400">Technical Overview</a>
+                        <a href="/docs/api-reference.html" class="block touch-button hover:text-green-400">API Reference</a>
+                        <a href="/docs/feature-guide.html" class="block touch-button hover:text-green-400">Feature Guide</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <div class="space-y-2">
+                        <a href="/docs/implementation.html" class="block touch-button hover:text-green-400">Implementation Guide</a>
+                        <a href="/docs/support.html" class="block touch-button hover:text-green-400">Support</a>
+                        <a href="/docs/faq.html" class="block touch-button hover:text-green-400">FAQ</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <div class="space-y-2">
+                        <a href="/privacy" class="block touch-button hover:text-green-400">Privacy Policy</a>
+                        <a href="/terms" class="block touch-button hover:text-green-400">Terms of Service</a>
+                        <a href="/security" class="block touch-button hover:text-green-400">Security</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const closeMenuButton = document.getElementById('close-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+            });
+
+            closeMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+
+            // Initialize demo component if available
+            if (typeof ReactDOM !== 'undefined' && document.getElementById('demo-component')) {
+                ReactDOM.render(
+                    React.createElement(MockFeatureDemo),
+                    document.getElementById('demo-component')
+                );
+            }
+        });
+    </script>
+</body>
+</html>
